@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--<settings>-->
+        <!--<setting name="cacheEnabled" value="true"/>&lt;!&ndash;开启，他也是默认值&ndash;&gt;-->
+        <!--&lt;!&ndash;<setting name="cacheEnabled" value="false"/>&ndash;&gt;&lt;!&ndash;关闭&ndash;&gt;-->
+    <!--</settings>-->
+    <!--//延迟加载-->
+    <!--直接加载-->
+    <!--不用配置就是直接加载-->
+    <!--侵入式延迟-->
+    <!--<settings>
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <setting name="aggressiveLazyLoading" value="true"/>
+    </settings>-->
+    <!--深度延迟-->
+    <!--<settings>
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <setting name="aggressiveLazyLoading" value="false"/>
+    </settings>-->
+    <typeAliases>
+    <package name="cn.wh.entity"></package>
+    </typeAliases>
+</configuration>

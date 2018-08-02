@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.wh.dao.IBookDAO">
+    <resultMap  id="MessageResult" type="Book">
+    <id column="bookID" jdbcType="INTEGER" property="bookID"/>
+    <result column="bookName" jdbcType="VARCHAR" property="bookName"/>
+    <result column="bookAuthor" jdbcType="VARCHAR" property="bookAuthor"/>
+    <result column="bookPrice" jdbcType="VARCHAR" property="bookPrice"/>
+</resultMap>
+    <insert id="addBook" >
+       INSERT book (bookName,bookAuthor,bookPrice)VALUES(#{bookName},#{bookAuthor},#{bookPrice})
+    </insert>
+    <select id="list" resultMap="MessageResult">
+        SELECT * from  book
+    </select>
+    <delete id="delete" parameterType="INTEGER">
+        DELETE FROM  book WHERE bookID=#{id}
+    </delete>
+    <update id="update">
+    update book set bookName=#{bookName}  WHERE bookID=#{bookID}
+    </update>
+    <select id="book" parameterType="INTEGER" resultType="cn.wh.entity.Book">
+      SELECT * from book where bookID=#{bookId}
+    </select>
+    <select id="count" resultType="INTEGER">
+        SELECT count(1) FROM book
+    </select>
+    <select id="getBookList" resultMap="MessageResult">
+      SELECT * FROM book  limit #{come},#{to}
+    </select>
+</mapper>
