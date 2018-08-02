@@ -29,6 +29,7 @@ public class BookController  {
      * @param model
      * @return
      */
+    //水水水水
     @RequestMapping("/dologin")
     public String doPost(Book book, Model model) {
         int i = service.addBook(book);
